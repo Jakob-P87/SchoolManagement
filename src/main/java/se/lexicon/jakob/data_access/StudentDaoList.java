@@ -45,7 +45,6 @@ public class StudentDaoList implements StudentDao
             if (students.get(i).getName().equals(name))
             {
                 findStudent.add(students.get(i));
-
             }
         }
         return findStudent;
@@ -72,6 +71,12 @@ public class StudentDaoList implements StudentDao
             System.out.println("[" + student.getId() + "]" + student.getName() + student.getAddress() + "\n\t" + student.getEmail());
         }
         return students;
+    }
+
+    @Override
+    public void clearList()
+    {
+        students.clear();
     }
 
     @Override

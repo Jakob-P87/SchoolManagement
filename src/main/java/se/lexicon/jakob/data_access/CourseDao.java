@@ -12,5 +12,6 @@ public interface CourseDao
     List<Course> findByName(String name);
     List<Course> findByDate(LocalDate date);
     List<Course> findAll();
+    void clearList();
     boolean removeCourse(Course course);
 }

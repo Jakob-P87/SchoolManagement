@@ -11,5 +11,6 @@ public interface StudentDao
     List<Student> findByName(String name);
     Student findById(int id);
     List<Student> findAll();
+    void clearList();
     boolean deleteStudent(Student student);
 }

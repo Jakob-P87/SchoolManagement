@@ -78,6 +78,12 @@ public class CourseDaoList implements CourseDao
     }
 
     @Override
+    public void clearList()
+    {
+        courses.clear();
+    }
+
+    @Override
     public boolean removeCourse(Course course)
     {
         return courses.remove(course);

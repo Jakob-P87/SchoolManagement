@@ -36,10 +36,4 @@ public class Student
     {
         return address;
     }
-
-    //For reset during test
-    public static void setCounter()
-    {
-        Student.counter = 0;
-    }
 }

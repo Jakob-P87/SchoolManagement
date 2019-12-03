@@ -13,13 +13,12 @@ public class Course
 
     private static int counter;
 
-    public Course(String courseName, LocalDate startDate, int weekDuration/*, List<Student> students*/)
+    public Course(String courseName, LocalDate startDate, int weekDuration)
     {
         this.id = ++counter;
         this.courseName = courseName;
         this.startDate = startDate;
         this.weekDuration = weekDuration;
-        //this.students = students;
     }
 
     public int getId()
@@ -47,8 +46,13 @@ public class Course
         return students;
     }
 
-    public void setStudents(List<Student> students)
+    public void register(Student student)
     {
-        this.students = students;
+        students.add(student);
+    }
+
+    public void unregister(Student student)
+    {
+        students.remove(student);
     }
 }
