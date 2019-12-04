@@ -1,8 +1,8 @@
 package se.lexicon.jakob;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.junit.internal.runners.model.EachTestNotifier;
 import se.lexicon.jakob.data_access.StudentDaoList;
 import se.lexicon.jakob.models.Course;
 import se.lexicon.jakob.models.Student;
@@ -31,10 +31,21 @@ public class TestCourse
 
         students = new StudentDaoList();
 
-        student = new Student("Count Olaf", "abc@abc.123", " ertyu");
+        student = new Student("Count Olaf", "abc@abc.123", "Not here");
         students.saveStudent(student);
-        student2 = new Student("Violet Boudalaiere", "def@abc.123", " retyuio");
+        student2 = new Student("Violet Baudelaiere", "def@abc.123", "Over there");
         students.saveStudent(student2);
+    }
+
+    @After
+    public void reset()
+    {
+        Course course = null;
+        LocalDate date = null;
+
+        StudentDaoList students = null;
+        Student student = null;
+        Student student2 = null;
     }
 
     @Test
@@ -69,7 +80,7 @@ public class TestCourse
         course.register(student2);
 
         //Assert
-        assertEquals(course.getStudents().size(), course.getStudents().size());
+        assertEquals(2, course.getStudents().size());
     }
 
     @Test
@@ -82,6 +93,6 @@ public class TestCourse
         course.unregister(student);
 
         //Assert
-        assertEquals(course.getStudents().size(), course.getStudents().size());
+        assertEquals(1, course.getStudents().size());
     }
 }

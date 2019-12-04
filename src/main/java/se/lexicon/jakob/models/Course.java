@@ -1,6 +1,7 @@
 package se.lexicon.jakob.models;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Course
@@ -9,7 +10,7 @@ public class Course
     private String courseName;
     private LocalDate startDate;
     private int weekDuration;
-    private List<Student> students;
+    private List<Student> students = new ArrayList<>();
 
     private static int counter;
 

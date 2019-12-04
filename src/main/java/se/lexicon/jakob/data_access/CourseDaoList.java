@@ -41,11 +41,11 @@ public class CourseDaoList implements CourseDao
     {
         List<Course> findCourse = new ArrayList<>();
 
-        for (int i = 0; i < courses.size(); i++)
+        for (Course course : courses)
         {
-            if (courses.get(i).getCourseName().equals(name))
+            if (course.getCourseName().equals(name))
             {
-                findCourse.add(courses.get(i));
+                findCourse.add(course);
             }
         }
         return findCourse;
@@ -56,11 +56,11 @@ public class CourseDaoList implements CourseDao
     {
         List<Course> findCourseDate = new ArrayList<>();
 
-        for (int i = 0; i < courses.size(); i++)
+        for (Course course : courses)
         {
-            if (courses.get(i).getStartDate().equals(date))
+            if (course.getStartDate().equals(date))
             {
-                findCourseDate.add(courses.get(i));
+                findCourseDate.add(course);
 
             }
         }

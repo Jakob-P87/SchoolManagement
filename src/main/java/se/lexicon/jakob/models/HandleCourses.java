@@ -19,7 +19,7 @@ public class HandleCourses implements IScanner
             /**--------------------------------------*/
             System.out.println("[1]Add New Course");
             System.out.println("[2]All Courses");
-            System.out.println("[3]Add Student to course");
+            System.out.println("[3]Edit Course");
             System.out.println("[4]Delete Course");
             System.out.println("[5]Back To Menu");
             /**--------------------------------------*/
@@ -35,12 +35,12 @@ public class HandleCourses implements IScanner
                     courses.findAll();
                     break;
                 case 3:
-                    addStudentToCourse();
-                    break;
-                case 4:
-                    removeCourse();
+                    editCourse();
                     break;
                 case 5:
+                    removeCourse();
+                    break;
+                case 6:
                     runCourseMenu = false;
                     break;
                 default:
@@ -93,7 +93,7 @@ public class HandleCourses implements IScanner
         courses.removeCourse(courses.findById(courseId));
     }
 
-    private static void addStudentToCourse()
+    private static void editCourse()
     {
 
     }

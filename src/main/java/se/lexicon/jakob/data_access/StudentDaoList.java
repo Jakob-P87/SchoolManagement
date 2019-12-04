@@ -40,11 +40,11 @@ public class StudentDaoList implements StudentDao
     {
         List<Student> findStudent = new ArrayList<>();
 
-        for (int i = 0; i < students.size(); i++)
+        for (Student student : students)
         {
-            if (students.get(i).getName().equals(name))
+            if (student.getName().equals(name))
             {
-                findStudent.add(students.get(i));
+                findStudent.add(student);
             }
         }
         return findStudent;
@@ -53,11 +53,11 @@ public class StudentDaoList implements StudentDao
     @Override
     public Student findById(int id)
     {
-        for (int i = 0; i < students.size(); i++)
+        for (Student student : students)
         {
-            if (students.get(i).getId() == id)
+            if (student.getId() == id)
             {
-                return students.get(i);
+                return student;
             }
         }
         return null;
