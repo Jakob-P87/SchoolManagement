@@ -42,7 +42,7 @@ public class StudentDaoList implements StudentDao
 
         for (Student student : students)
         {
-            if (student.getName().equals(name))
+            if (student.getName().equalsIgnoreCase(name))
             {
                 findStudent.add(student);
             }
@@ -68,7 +68,10 @@ public class StudentDaoList implements StudentDao
     {
         for (Student student : students)
         {
-            System.out.println("[" + student.getId() + "]" + student.getName() + student.getAddress() + "\n\t" + student.getEmail());
+            System.out.println("[" + student.getId() + "] " + student.getName());
+            System.out.println("Address: " + student.getAddress());
+            System.out.println("Email: " + student.getEmail());
+            System.out.println("==========================");
         }
         return students;
     }

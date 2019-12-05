@@ -1,12 +1,10 @@
 package se.lexicon.jakob;
 
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.assertEquals;
-
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import se.lexicon.jakob.models.Student;
+
+import static org.junit.Assert.*;
 
 public class TestStudent
 {
@@ -43,5 +41,38 @@ public class TestStudent
     public void testAddress()
     {
         assertEquals(address, student.getAddress());
+    }
+
+    @Test
+    public void testSetName()
+    {
+        //Act
+        student.setName("lasse");
+
+        //Assert
+        assertEquals(student.getName(), student.getName());
+        assertNotEquals(name, student.getName());
+    }
+
+    @Test
+    public void testSetEmail()
+    {
+        //Act
+        student.setEmail("lasse@abc.com");
+
+        //Assert
+        assertEquals(student.getEmail(), student.getEmail());
+        assertNotEquals(email, student.getEmail());
+    }
+
+    @Test
+    public void testSetAddress()
+    {
+        //Act
+        student.setAddress("valhall");
+
+        //Assert
+        assertEquals(student.getAddress(), student.getAddress());
+        assertNotEquals(address, student.getAddress());
     }
 }

@@ -29,7 +29,7 @@ public class Course
 
     public String getCourseName()
     {
-        return courseName;
+        return courseName.substring(0,1).toUpperCase() + courseName.substring(1).toLowerCase();
     }
 
     public LocalDate getStartDate()
@@ -55,5 +55,20 @@ public class Course
     public void unregister(Student student)
     {
         students.remove(student);
+    }
+
+    public void setCourseName(String courseName)
+    {
+        this.courseName = courseName;
+    }
+
+    public void setStartDate(LocalDate startDate)
+    {
+        this.startDate = startDate;
+    }
+
+    public void setWeekDuration(int weekDuration)
+    {
+        this.weekDuration = weekDuration;
     }
 }

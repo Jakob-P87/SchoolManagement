@@ -1,8 +1,6 @@
-package se.lexicon.jakob.graphics;
+package se.lexicon.jakob.console;
 
 import se.lexicon.jakob.interfaces.IScanner;
-import se.lexicon.jakob.models.HandleCourses;
-import se.lexicon.jakob.models.HandleStudents;
 
 public class MainMenu implements IScanner
 {
@@ -17,18 +15,22 @@ public class MainMenu implements IScanner
 
         while (keepRunning)
         {
-            System.out.println("School Management System");
-            System.out.println("Menu");
-            System.out.print("[C]ourses" + "\n" + "[S]tudents" + "\n" + "[E]xit");
+            System.out.println("=School Management System=");
+            System.out.println("========== Menu ==========");
+            System.out.println("[C]ourses");
+            System.out.println("[S]tudents");
+            System.out.println("[E]xit");
+            System.out.println("==========================");
+
             char choice = scan.nextLine().toUpperCase().charAt(0);
 
             switch (choice)
             {
                 case 'C':
-                    HandleCourses.courses();
+                    HandleCourses.coursesMainMenu();
                     break;
                 case 'S':
-                    HandleStudents.students();
+                    HandleStudents.studentsMainMenu();
                     break;
                 case 'E':
                     keepRunning = false;

@@ -32,17 +32,18 @@ public class TestStudentDaoList
     public void reset()
     {
         students.clearList();
-        StudentDaoList students = null;
-        Student student = null;
-        Student student2 = null;
-        Student student3 = null;
+        students = null;
+        student = null;
+        student2 = null;
+        student3 = null;
     }
 
     @Test
     public void addStudent()
     {
         //Act
-        students.saveStudent(new Student("", "", ""));
+        Student student4 = new Student("kalle", "kalle@email.com", "valhall");
+        students.saveStudent(student4);
 
         //Assert
         assertEquals(4, students.findAll().size());

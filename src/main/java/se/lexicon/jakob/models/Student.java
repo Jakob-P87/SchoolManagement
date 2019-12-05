@@ -24,7 +24,7 @@ public class Student
 
     public String getName()
     {
-        return name;
+        return name.substring(0,1).toUpperCase() + name.substring(1).toLowerCase();
     }
 
     public String getEmail()
@@ -34,6 +34,21 @@ public class Student
 
     public String getAddress()
     {
-        return address;
+        return address.substring(0,1).toUpperCase() + address.substring(1).toLowerCase();
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
+
+    public void setEmail(String email)
+    {
+        this.email = email;
+    }
+
+    public void setAddress(String address)
+    {
+        this.address = address;
     }
 }

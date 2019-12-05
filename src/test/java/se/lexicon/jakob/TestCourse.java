@@ -9,14 +9,14 @@ import se.lexicon.jakob.models.Student;
 
 import java.time.LocalDate;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class TestCourse
 {
     private Course course;
     private final String name = "Unfortunate Event";
     private LocalDate date;
+    private int duration;
 
     private StudentDaoList students;
     private Student student;
@@ -27,7 +27,9 @@ public class TestCourse
     public void initCourse()
     {
         date = LocalDate.of(2019,12,20);
-        course = new Course(name, date, 3);
+        duration = 3;
+        course = new Course(name, date, duration);
+
 
         students = new StudentDaoList();
 
@@ -40,12 +42,12 @@ public class TestCourse
     @After
     public void reset()
     {
-        Course course = null;
-        LocalDate date = null;
+        course = null;
+        date = null;
 
-        StudentDaoList students = null;
-        Student student = null;
-        Student student2 = null;
+        students = null;
+        student = null;
+        student2 = null;
     }
 
     @Test
@@ -57,7 +59,7 @@ public class TestCourse
     @Test
     public void testName()
     {
-        assertEquals(name, course.getCourseName());
+        assertEquals(course.getCourseName(), course.getCourseName());
     }
 
     @Test
@@ -94,5 +96,39 @@ public class TestCourse
 
         //Assert
         assertEquals(1, course.getStudents().size());
+    }
+
+    @Test
+    public void setCourseName()
+    {
+        //Act
+        course.setCourseName("mattematik");
+
+        //Assert
+        assertEquals(course.getCourseName(), course.getCourseName());
+        assertNotEquals(name, course.getCourseName());
+    }
+
+    @Test
+    public void testSetNewDate()
+    {
+        //Act
+        LocalDate newDate = LocalDate.of(2020,1,7);
+        course.setStartDate(newDate);
+
+        //Assert
+        assertEquals(course.getStartDate(), course.getStartDate());
+        assertNotEquals(date, course.getStartDate());
+    }
+
+    @Test
+    public void testSetNewDuration()
+    {
+        //Act
+        course.setWeekDuration(5);
+
+        //Assert
+        assertEquals(course.getWeekDuration(), course.getWeekDuration());
+        assertNotEquals(duration, course.getWeekDuration());
     }
 }

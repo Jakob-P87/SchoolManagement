@@ -43,7 +43,7 @@ public class CourseDaoList implements CourseDao
 
         for (Course course : courses)
         {
-            if (course.getCourseName().equals(name))
+            if (course.getCourseName().equalsIgnoreCase(name))
             {
                 findCourse.add(course);
             }
@@ -61,7 +61,6 @@ public class CourseDaoList implements CourseDao
             if (course.getStartDate().equals(date))
             {
                 findCourseDate.add(course);
-
             }
         }
         return findCourseDate;
@@ -72,7 +71,10 @@ public class CourseDaoList implements CourseDao
     {
         for (Course course : courses)
         {
-            System.out.println("[" + course.getId() + "]" + course.getCourseName() + "\nStart Date[" + course.getStartDate() + "]\nDuration: " + course.getWeekDuration() + " Weeks");
+            System.out.println("[" + course.getId() + "]" + course.getCourseName());
+            System.out.println("Start: " + course.getStartDate());
+            System.out.println("Duration: " + course.getWeekDuration());
+            System.out.println("==========================");
         }
         return courses;
     }
